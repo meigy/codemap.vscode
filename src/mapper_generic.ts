@@ -47,7 +47,7 @@ export class mapper {
 
         try {
 
-            mappings.forEach(item => item.regex = new RegExp(item.pattern, 'g'));
+            mappings.forEach(item => item.regex = new RegExp(item.pattern, 'gi'));
 
             let lines: string[];
 
@@ -86,7 +86,7 @@ export class mapper {
                                         try {
                                             // match = match.replaceAll(text, ''); // fails to treat arguments as regex :o( 
 
-                                            match = match.replace(new RegExp(text, 'g'), '');
+                                            match = match.replace(new RegExp(text, 'gi'), '');
                                         }
                                         catch (error) {
                                             console.log(error);
